@@ -1,8 +1,8 @@
 var controllerModule = angular.module('todoAppControllers',[]);
 
-controllerModule.controller('todoController',['$scope',function($scope){
+controllerModule.controller('todoController',['$scope','storageService',function($scope,storageService){
 
-	$scope.todoList = ['Test TODO','Demo TODO'];
+	$scope.todoList = storageService.get();
 
 	$scope.todo = '';
 
@@ -13,11 +13,13 @@ controllerModule.controller('todoController',['$scope',function($scope){
 		event.preventDefault();
 		$scope.todoList.push(todo);
 		$scope.todo = '';
+		storageService.set($scope.todoList);
 	};
 
 	$scope.removeTodo = function(index,event){
 		event.preventDefault();
 		$scope.todoList.splice(index,1);
+		storageService.set($scope.todoList);
 	};
 
 }]);

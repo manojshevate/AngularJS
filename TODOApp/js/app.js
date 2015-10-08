@@ -1,1 +1,1 @@
-angular.module('todoApp',['todoAppControllers','todoAppDirectives']);
+angular.module('todoApp',['todoAppControllers','todoAppDirectives','todoAppServices']);
