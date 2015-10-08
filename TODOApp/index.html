@@ -26,16 +26,17 @@
 
 <form class="form-inline add-task" ng-submit="addTodo(todo,$event)">
     <input type="text" ng-model="todo" id="add-task-input" class="input-large" placeholder="Type here to create a task..." style="width: 1014px;">
-    <input type="button" value="Add" ng-click=""/>
 </form>
 
 <div class="tasks-group">
 
-  <ol>
+  <div ng-show="!todoList.length">Wooohhh!! No item in TODO list!!</div>
+
+  <ul>
       <li ng-repeat="name in todoList track by $index">
-        <span demo-Directive>{{name}}</span>
+        <span demo-Directive><a href class="" ng-click="removeTodo($index,$event)">&times;</a> {{name}}</span>
       </li>
-  </ol>
+  </ul>
 
 </div>
 

@@ -15,4 +15,9 @@ controllerModule.controller('todoController',['$scope',function($scope){
 		$scope.todo = '';
 	};
 
+	$scope.removeTodo = function(index,event){
+		event.preventDefault();
+		$scope.todoList.splice(index,1);
+	};
+
 }]);
