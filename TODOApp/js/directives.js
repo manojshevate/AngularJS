@@ -7,4 +7,11 @@ angular.module('todoAppDirectives',[]).directive('demoDirective',function(){
 		}
 	};
 
+}).directive('customTitle',function(){
+	return {
+		scope: {
+			user: '=owner'
+		},
+		template: 'Welcome {{user.name}}!!'
+	};
 });

@@ -6,7 +6,7 @@ controllerModule.controller('todoController',['$scope',function($scope){
 
 	$scope.todo = '';
 
-	$scope.title = 'Manoj';
+	$scope.user = {name: 'Manoj'};
 
 
 	$scope.addTodo = function(todo,event){

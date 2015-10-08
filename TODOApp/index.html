@@ -22,6 +22,8 @@
 </head>
 <body ng-controller="todoController">
 
+<div custom-Title owner="user"></div>
+
 <form class="form-inline add-task" ng-submit="addTodo(todo,$event)">
     <input type="text" ng-model="todo" id="add-task-input" class="input-large" placeholder="Type here to create a task..." style="width: 1014px;">
     <input type="button" value="Add" ng-click=""/>
