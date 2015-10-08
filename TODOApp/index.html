@@ -32,7 +32,7 @@
 <div class="tasks-group">
 
   <ol>
-      <li ng-repeat="name in todoList">
+      <li ng-repeat="name in todoList track by $index">
         <span demo-Directive>{{name}}</span>
       </li>
   </ol>
