@@ -17,6 +17,7 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
 
 </head>
 <body ng-controller="todoController">
@@ -29,7 +30,9 @@
 <div class="tasks-group">
 
   <ol>
-      <li ng-repeat="name in todoList">{{name}}</li>
+      <li ng-repeat="name in todoList">
+        <span demo-Directive>{{name}}</span>
+      </li>
   </ol>
 
 </div>
