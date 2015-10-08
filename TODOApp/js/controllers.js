@@ -4,7 +4,9 @@ controllerModule.controller('todoController',['$scope',function($scope){
 
 	$scope.todoList = ['Test TODO','Demo TODO'];
 
-	$scope.todo = ''
+	$scope.todo = '';
+
+	$scope.user = {name: 'Manoj'};
 
 
 	$scope.addTodo = function(todo,event){
