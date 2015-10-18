@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="todoApp" ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <title>TODO App</title>
+
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/thirdparty.css">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-resource.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
+
+</head>
+<body ng-controller="todoController">
+
+<div custom-Title owner="user"></div>
+
+<form class="form-inline add-task" ng-submit="addTodo(todo,$event)">
+    <input type="text" ng-model="todo" id="add-task-input" class="input-large" placeholder="Type here to create a task..." style="width: 1014px;">
+</form>
+
+<div class="tasks-group">
+
+  <div ng-show="!todoList.length">Wooohhh!! No item in TODO list!!</div>
+
+  <ul>
+      <li ng-repeat="name in todoList track by $index">
+        <span demo-Directive><a href class="" ng-click="removeTodo($index,$event)">&times;</a> {{name}}</span>
+      </li>
+  </ul>
+
+</div>
+
+</body>
+</html>
